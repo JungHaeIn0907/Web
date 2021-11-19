@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico">
+  <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+  <title>회원가입</title>
+</head>
+
+<body>
+  <div class="coupang-login">
+
+    <header>
+      <a href="https://www.coupang.com/"><img src="image/logo-coupang.png" class="main_logo" alt="coupang"></a>
+    </header>
+
+    <main>
+      <!--회원정보-->
+      <div class='member-wrapper'>
+        <h2>회원 정보를 입력해주세요</h2>
+
+        <div class="member-inform">
+          <span class="icon">
+            <button class="user-btn-id" onclick="showErrorType(this)">
+              <i class="far fa-envelope"></i>
+            </button>
+          </span>
+          <span>
+            <label for="user-id">
+              <input type="text" class="member-input" placeholder="아이디(이메일)">
+            </label>
+          </span>
+        </div>
+        <div class="err-text-id">
+          <p>이메일을 입력하세요.</p>
+        </div>
+
+        <div class="member-inform">
+          <span class="icon">
+            <button class="user-btn-password" onclick="showErrorType(this)">
+              <i class="fas fa-lock"></i>
+            </button>
+          </span>
+          <span>
+            <label for="user-password">
+              <input type="text" class="member-input" placeholder="비밀번호">
+            </label>
+          </span>
+        </div>
+        <div class="err-text-password">
+          <p>x 영문/숫자/특수문자 2가지 이상 조합 (8~20자)</p>
+          <p>x 3개 이상 연속되거나 동일한 문자/숫자 제외</p>
+          <p>x 아이디(이메일) 제외</p>
+        </div>
+
+        <div class="member-inform">
+          <span class="icon">
+            <button class="user-btn-password-chk" onclick="showErrorType(this)">
+              <i class="fas fa-lock"></i>
+            </button>
+          </span>
+          <span>
+            <label for="user-password-chk">
+              <input type="text" class="member-input" placeholder="비밀번호 확인">
+            </label>
+          </span>
+        </div>
+        <div class="err-text-password-chk">
+          <p>x 확인을 위해 새 비밀번호를 다시 입력해주세요.</p>
+        </div>
+
+        <div class="member-inform">
+          <span class="icon">
+            <button class="user-btn-name" onclick="showErrorType(this)">
+              <i class="fas fa-user-alt"></i></button>
+            </span>
+          <span>
+            <label for="user-name">
+              <input type="text" class="member-input" placeholder="이름">
+            </label>
+          </span>
+        </div>
+        <div class="err-text-name">
+          <p>이름을 정확히 입력하세요.</p>
+        </div>
+
+        <div class="member-inform">
+          <span class="icon">
+            <button class="user-btn-phone" onclick="showErrorType(this)">
+              <i class="fas fa-mobile-alt"></i>
+            </button>
+          </span>
+          <span>
+            <label for="user-phone">
+              <input type="text" class="member-input" placeholder="휴대폰 번호">
+            </label>
+          </span>
+        </div>
+        <div class="err-text-phone">
+          <p>휴대폰 번호를 정확하게 입력하세요.</p>
+        </div>
+
+        <hr>
+
+        <!--동의약관-->
+        <h2>쿠팡 서비스약관에 동의해주세요</h2>
+        <ul>
+          <li>
+            <label><input type="checkbox"  value="selectall" onclick='selectAll(this)'> 모두 동의합니다.</label>
+            <p class="all-chk">동의에는 필수 및 선택 목적(광고성 정보수신 포함)에 대한 동의가 포함되어 있으며, 선택 목적의 동의를 거부하시는 경우에도 서비스 이용이 가능합니다.</p>  
+          </li>
+        </ul>
+        <fieldset class="chk-list">
+          <ul class="service-chk-list"> 
+            <li>
+              <label><input type="checkbox" name="service-chk"> [필수] 만 14세 이상입니다</label>
+            </li>
+            <li>
+              <label><input type="checkbox" name="service-chk"> [필수] 쿠팡 이용약관 동의</label>
+            </li>
+            <li>
+              <label><input type="checkbox" name="service-chk"> [필수] 전자금융거래 이용약관 동의</label>
+            </li>
+            <li>
+              <label><input type="checkbox" name="service-chk"> [필수] 개인정보 제 3자 제공 동의</label>
+            </li>
+            <li>
+              <label><input type="checkbox" name="service-chk"> [선택] 마케팅 및 이벤트 목적의 개인정보 수집 및 이용 동의</label>
+            </li>
+            <li> 
+              <label><input type="checkbox" name="service-chk"> [선택] 광고성 정보 수신 동의</label>
+            </li>
+            <ul class="service-chk-list-rcept" name="service-chk" >
+              <li>
+                <label><input type="checkbox" name="service-chk"> [선택] 이메일 수신 동의</label>
+              </li>
+              <li>
+                <label><input type="checkbox" name="service-chk"> [선택] SMS, MMS 수신 동의</label>
+              </li>
+              <li>
+                <label><input type="checkbox" name="service-chk"> [선택] 앱 푸시 수신 동의</label>
+              </li>
+            </ul>
+          </ul>
+        </fieldset>
+      </div>
+
+      <div class="join-button">
+        <button type="button" class="join-button-in join-button-out">동의하고 가입하기</button>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-text">@Coupang Corp. All rights reserved</div>
+    </footer>
+
+    <script src="js/icon-click.js"></script>
+
+  </div>
+  
+</body>
+</html>
